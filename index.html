@@ -145,19 +145,41 @@
   <p>By using the bot, you agree that moderation actions may be logged to improve moderation efficiency and accountability.</p>
 </section>
   
-  <!-- 🌐 DISCORD SERVER SECTION -->
-  <section id="server" class="section" style="text-align: center;">
-    <h2>🌐 Hablas Español? Puedes unirte a nuestro Servidor de Discord!</h2>
-    <p>Se parte del caos! (Y tener actualizaciones, claro).</p>
-    <a href="https://discord.gg/5BQ9h3Gk3W" target="_blank">
-      <img src="https://cdn.discordapp.com/attachments/1344466924230279190/1392965639731150999/Lancer_item.gif?ex=687173d8&is=68702258&hm=27f65fe76f54d854e0c662546d597c52ff722b5f9809c949e9a590fa880f750d&" alt="Unete al Servidor!" style="width: 200px;">
-    </a>
-  </section>
-<audio id="splat" src="https://discord.com/channels/@me/1344466924230279190/1392967877576888401" preload="auto"></audio>
+<!-- 🌐 DISCORD SERVER SECTION -->
+<section id="server" class="section" style="text-align: center;">
+  <h2>🌐 ¿Hablas Español? ¡Puedes unirte a nuestro Servidor de Discord!</h2>
+  <p>¡Sé parte del caos! (Y enterarte de las actualizaciones, claro).</p>
 
-<button onclick="document.getElementById('splat').play(); window.open('https://discord.gg/5BQ9h3Gk3W', '_blank');">
-  💥 Unirse al servidor
-</button>
+  <!-- Gif de Lancer -->
+  <img 
+    src="https://cdn.discordapp.com/attachments/1344466924230279190/1392965639731150999/Lancer_item.gif" 
+    alt="Lancer gif" 
+    style="width: 150px; height: auto; margin-bottom: 20px;" 
+  />
+
+  <br />
+
+
+  <button onclick="playSoundAndJoin()" 
+          style="font-size: 18px; padding: 12px 25px; background-color: #ffcc00; color: #000; border-radius: 12px; font-weight: bold; cursor: pointer; border: none;">
+    💥 Unirse al servidor
+  </button>
+
+  <!-- Sonido del splat -->
+  <audio id="splat" src="https://files.catbox.moe/zll4ml.mp3" preload="auto"></audio>
+</section>
+
+<script>
+  function playSoundAndJoin() {
+    const audio = document.getElementById("splat");
+    if (audio) {
+      audio.play().catch(err => {
+        console.warn("Error reproduciendo el sonido:", err);
+      });
+    }
+    window.open("https://discord.gg/5BQ9h3Gk3W", "_blank");
+  }
+</script>
 
   
   <!-- 🔻 FOOTER -->
