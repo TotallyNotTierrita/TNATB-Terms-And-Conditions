@@ -194,7 +194,110 @@
     style="border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.4);">
   </iframe>
 </section>
+ <!pop up XD>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SPAMTON POPUP</title>
+  <style>
+    @font-face {
+      font-family: '8bit';
+      src: url('8bitoperator_jve.ttf'); /* Cambia esto si usas otra fuente */
+    }
 
+    body {
+      background-color: black;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    .popup {
+      position: absolute;
+      width: 300px;
+      height: auto;
+      z-index: 9999;
+      box-shadow: 4px 4px 0px #000;
+      font-family: '8bit', monospace;
+      color: white;
+    }
+
+    .popup img {
+      width: 100%;
+      display: block;
+    }
+
+    .popup-text {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      font-size: 12px;
+      line-height: 1.4;
+      text-shadow: 1px 1px black;
+    }
+
+    .popup-button {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 5px 10px;
+      font-size: 12px;
+      background-color: yellow;
+      color: black;
+      border: 2px solid black;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PLANTILLA POPUP -->
+  <div class="popup" id="popup-template" style="display:none;">
+    <img src="https://cdn.discordapp.com/attachments/1286510598682706010/1395175863124885575/20250716_174643_0000.png?ex=68797e46&is=68782cc6&hm=7b5096ad3269847df8f4736ca27b4c4655997a810b238cc38425997a1e9242dc&" alt="Spamton Popup">
+    <div class="popup-text">
+      <p>WHY BE THE [Little Sponge] WHO HATES ITS [$4.99] LIFE<br>WHEN YOU CAN BE A<br>[BIG SHOT!!!]</p>
+    </div>
+    <button class="popup-button" onclick="spawnSpamton(this)">CLICK HERE TO [Give me all your Kromer]!!!!</button>
+  </div>
+
+  <script>
+    function spawnSpamton(clickedBtn = null) {
+      const template = document.getElementById("popup-template");
+      const clone = template.cloneNode(true);
+      clone.id = ""; // Elimina el ID para que no se repita
+      clone.style.display = "block";
+
+      const x = Math.random() * (window.innerWidth - 320);
+      const y = Math.random() * (window.innerHeight - 200);
+
+      clone.style.left = x + "px";
+      clone.style.top = y + "px";
+
+      document.body.appendChild(clone);
+
+      // Si fue por clic, quitamos el popup anterior (opcional)
+      if (clickedBtn) {
+        clickedBtn.closest(".popup").remove();
+      }
+
+      // Multiplicación Spamtonesca™
+      setTimeout(() => {
+        if (Math.random() < 0.8) { // 80% chance de multiplicarse
+          for (let i = 0; i < 2; i++) spawnSpamton();
+        }
+      }, 100);
+    }
+
+    // ¡Inicia con uno al principio!
+    window.onload = () => {
+      spawnSpamton();
+    }
+  </script>
+
+</body>
+</html>
   
   <!-- 🔻 FOOTER -->
   <div class="legal-zone">
